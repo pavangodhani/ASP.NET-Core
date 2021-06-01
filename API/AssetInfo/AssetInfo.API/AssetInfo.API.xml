@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AssetInfo.API</name>
+    </assembly>
+    <members>
+        <member name="M:AssetInfo.API.Controllers.AssetsController.GetAssets(System.String)">
+            <summary>
+            Get all assets or enter a machine type for get the list of assets for given machine type
+            </summary>
+            <param name="machineType">The type of the machine</param>
+            <returns>Return list of assets</returns>
+        </member>
+        <member name="M:AssetInfo.API.Controllers.AssetsController.GetAsset(System.Int32)">
+            <summary>
+            Get asset by id 
+            </summary>
+            <param name="id">The id of the asset</param>
+            <returns>Return the requested asset</returns>
+        </member>
+        <member name="M:AssetInfo.API.Controllers.AssetsController.GetAssetsWithLatestSeriesNo">
+            <summary>
+            Get the all asset with it's latest series no
+            </summary>
+            <returns>Return the asset with latest series no</returns>
+        </member>
+        <member name="M:AssetInfo.API.Controllers.AssetsController.CreateAsset(AssetInfo.API.Models.AssetForCreationDto)">
+            <summary>
+            Create a new asset
+            </summary>
+            <param name="asset">The new asset</param>
+            <returns>Return the new cretaed asset</returns>
+        </member>
+        <member name="M:AssetInfo.API.Controllers.AssetsController.DeleteAsset(System.Int32)">
+            <summary>
+            Delete asset by id
+            </summary>
+            <param name="id">The id of the asset</param>
+            <returns>Delete the requested asset</returns>
+        </member>
+        <member name="M:AssetInfo.API.Controllers.AssetsController.UpdateAsset(System.Int32,AssetInfo.API.Models.AssetForUpdateDto)">
+            <summary>
+            Update an asset
+            </summary>
+            <param name="id">The of the asset</param>
+            <param name="asset">updated asset</param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetInfo.API.Controllers.AssetsController.PartiallyUpdateAsset(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{AssetInfo.API.Models.AssetForUpdateDto})">
+            <summary>
+            Partially update an asset
+            </summary>
+            <param name="id">The id of the asset which you want to get</param>
+            <param name="patchDocument">The set of opration to apply for the asset</param>
+            <returns>An ActionResult of type Asset</returns>
+            <remarks>
+            Sample request (This request updates the Asset's **Machine Type**)    
+                PATCH /api/assets/id    
+                [    
+                    {     
+                        "op": "replace",    
+                        "path": "/machinetype",     
+                        "value": "C100"    
+                    }     
+                ]    
+            </remarks>
+        </member>
+        <member name="M:AssetInfo.API.Controllers.MachineController.GetMachineTypes">
+            <summary>
+            Get all machineTypes
+            </summary>
+            <returns>
+            All machineTypes which are available in database
+            </returns>
+        </member>
+        <member name="M:AssetInfo.API.Controllers.MachineController.GetMachineTypesForSpecificAsset(System.String)">
+            <summary>
+            Get the list of all machine types with series no of asset for given asset
+            </summary>
+            <param name="assetName">The name of the asset</param>
+            <returns>Return list of all machineType with series no of given asset</returns>      
+        </member>
+        <member name="M:AssetInfo.API.Controllers.MachineController.GetMachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses">
+            <summary>
+            Get the machine types which are using the latest series of all the assets that it uses
+            </summary>
+            <returns>The list of the machine types</returns>
+        </member>
+        <member name="T:AssetInfo.API.Entities.Asset">
+            <summary>
+            An asset with id, machine type, asset name and asset series field
+            </summary>
+        </member>
+        <member name="P:AssetInfo.API.Entities.Asset.Id">
+            <summary>
+            The id of the asset
+            </summary>
+        </member>
+        <member name="P:AssetInfo.API.Entities.Asset.MachineType">
+            <summary>
+            The machine type uses given asset and series no of that asset 
+            </summary>
+        </member>
+        <member name="P:AssetInfo.API.Entities.Asset.AssetName">
+            <summary>
+            The name of asset
+            </summary>
+        </member>
+        <member name="P:AssetInfo.API.Entities.Asset.AssetSeriesNo">
+            <summary>
+            Series no of that asset     
+            </summary>
+        </member>
+    </members>
+</doc>
