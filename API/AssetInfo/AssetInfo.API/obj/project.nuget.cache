@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KuEphutWyFD24flR9zd8aT0KffL5XU8LUYqaB2ek0QQkESUF44+ZzQWoZYwvg/nTleoSmK166PeLEmaf6RElig==",
+  "dgSpecHash": "zBMZXxTXY/AkeiO2G5ZVGOdmBcOG0Oe6VHAQJva9mfGfYYs2eBhtwEJ+LLgmShM4Ye4XGLZFuCerqpv5mbVohQ==",
   "success": true,
-  "projectFilePath": "E:\\KLing\\ASP.NET Core\\Project\\AssetInfo\\AssetInfo.API\\AssetInfo.API.csproj",
+  "projectFilePath": "E:\\KLing\\github\\ASP.NET Core\\API\\AssetInfo\\AssetInfo.API\\AssetInfo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pavan\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\pavan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

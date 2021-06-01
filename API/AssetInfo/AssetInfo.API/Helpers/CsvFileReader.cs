@@ -10,7 +10,7 @@ namespace AssetInfo.API.Services
 
         private static int _count { get; set; }
 
-        private static string _csvFilePath = @"E:\KLing\ASP.NET Core\Project\AssetInfo\matrix.txt";
+        private static string _csvFilePath = @"E:\KLing\github\ASP.NET Core\API\AssetInfo\matrix.txt";
 
         public static ICollection<Asset> GetAssetsFromCsvFile()
         {

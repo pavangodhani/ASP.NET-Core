@@ -9,14 +9,14 @@ namespace AssetInfo.API.Helpers
 {
     public class AssetComparer : IEqualityComparer<Asset>
     {
-        public bool Equals([AllowNull] Asset x, [AllowNull] Asset y)
+        public bool Equals(Asset x, Asset y)
         {
-            throw new NotImplementedException();
+            return x.AssetName == y.AssetName && x.AssetSeriesNo == y.AssetSeriesNo;
         }
 
         public int GetHashCode([DisallowNull] Asset obj)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }

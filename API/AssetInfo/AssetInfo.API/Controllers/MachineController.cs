@@ -73,17 +73,17 @@ namespace AssetInfo.API.Controllers
         /// </summary>
         /// <returns>The list of the machine types</returns>
         [HttpGet("latest")]
-        public ActionResult<IEnumerable<string>> GetMachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses()
+        public ActionResult<IEnumerable<string>> GetMachineTypesWhichUseLatestAsse()
         {
-            var MachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses = 
-                _machineInfoRepository.GetMachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses();
+            var machineTypesWhichUseLatestAsse = 
+                _machineInfoRepository.GetMachineWhichUseLatestAssets();
 
-            if(MachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses.Count() == 0)
+            if(machineTypesWhichUseLatestAsse.Count() == 0)
             {
                 return NotFound();
             }
 
-            return Ok(MachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses);
+            return Ok(machineTypesWhichUseLatestAsse);
         }
     }
 }

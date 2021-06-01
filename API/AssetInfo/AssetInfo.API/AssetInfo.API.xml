@@ -80,7 +80,7 @@
             <param name="assetName">The name of the asset</param>
             <returns>Return list of all machineType with series no of given asset</returns>      
         </member>
-        <member name="M:AssetInfo.API.Controllers.MachineController.GetMachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses">
+        <member name="M:AssetInfo.API.Controllers.MachineController.GetMachineTypesWhichUseLatestAsse">
             <summary>
             Get the machine types which are using the latest series of all the assets that it uses
             </summary>

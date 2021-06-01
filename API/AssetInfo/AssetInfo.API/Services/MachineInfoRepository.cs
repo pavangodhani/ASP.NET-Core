@@ -1,5 +1,6 @@
 ﻿using AssetInfo.API.DbContexts;
 using AssetInfo.API.Entities;
+using AssetInfo.API.Helpers;
 using AssetInfo.API.Models;
 using System;
 using System.Collections.Generic;
@@ -33,44 +34,37 @@ namespace AssetInfo.API.Services
                 ).ToList<Asset>();
         }
 
-        public IEnumerable<string> GetMachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses()
+
+        public IEnumerable<string> GetMachineWhichUseLatestAssets()
         {
-            List<string> result = new List<string>();
-            //var machineTypes = GetMachineTypes();
-            //var assetsWithLatestSeriesNo = GetAssetsWithLatestSeriesNo();
+            var groupByMachineType = 
+                _context.Assets.ToList()
+                .GroupBy(a => a.MachineType)
+                .ToDictionary(a => a.Key, a => a.ToList());
 
-            //foreach (var machineType in machineTypes)
-            //{
-            //    var assetsForSpecificMachineType = GetAssetsForMachineType(machineType);
-            //    int count = 0;
+            var assetWithLatestSeries = GetAssetsWithLatestSeriesNo();
 
-            //    foreach (var assetForSpecificMachineType in assetsForSpecificMachineType)
-            //    {
-            //        foreach (var assetWithLatestSeriesNo in assetsWithLatestSeriesNo)
-            //        {
-            //            if (assetForSpecificMachineType.AssetName.ToLowerAndRemoveSpaces() ==
-            //                assetWithLatestSeriesNo.AssetName.ToLowerAndRemoveSpaces() &&
-            //                assetForSpecificMachineType.AssetSeriesNo.ToLowerAndRemoveSpacesAnds() ==
-            //                assetWithLatestSeriesNo.AssetSeriesNo.ToLowerAndRemoveSpacesAnds())
-            //            {
-            //                count++;
-            //            }
-            //        }
-            //    }
+            var machineWhichUseLatestAssets = new List<string>();
 
-            //    if (count == assetsForSpecificMachineType.Count() && machineType != null)
-            //    {
-            //        result.Add(machineType);
-            //    }
-            //}
+            AssetComparer assetComparer = new AssetComparer();
 
-            return result;
+            foreach (var machineType in groupByMachineType)
+            {
+                if(machineType.Value.All(a => assetWithLatestSeries.Contains<Asset>(a, assetComparer)))
+                {
+                    machineWhichUseLatestAssets.Add(machineType.Key);
+                }
+            }
+            return machineWhichUseLatestAssets;
         }
 
-        public void GetMachineWhichUseLatestAssets()
+        public IEnumerable<Asset> GetAssetsWithLatestSeriesNo()
         {
-            var mDict = _context.Assets.GroupBy(x => x.MachineType).ToDictionary(x => x.Key);
+            AssetNameComparer assetNameComparer = new AssetNameComparer();
+
+            return _context.Assets.OrderByDescending(
+                a => a.AssetSeriesNo
+                ).ToHashSet<Asset>(assetNameComparer);
         }
     }
-
 }

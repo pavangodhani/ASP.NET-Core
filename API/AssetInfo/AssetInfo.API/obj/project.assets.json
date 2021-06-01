@@ -5903,11 +5903,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\KLing\\ASP.NET Core\\Project\\AssetInfo\\AssetInfo.API\\AssetInfo.API.csproj",
+      "projectUniqueName": "E:\\KLing\\github\\ASP.NET Core\\API\\AssetInfo\\AssetInfo.API\\AssetInfo.API.csproj",
       "projectName": "AssetInfo.API",
-      "projectPath": "E:\\KLing\\ASP.NET Core\\Project\\AssetInfo\\AssetInfo.API\\AssetInfo.API.csproj",
+      "projectPath": "E:\\KLing\\github\\ASP.NET Core\\API\\AssetInfo\\AssetInfo.API\\AssetInfo.API.csproj",
       "packagesPath": "C:\\Users\\pavan\\.nuget\\packages\\",
-      "outputPath": "E:\\KLing\\ASP.NET Core\\Project\\AssetInfo\\AssetInfo.API\\obj\\",
+      "outputPath": "E:\\KLing\\github\\ASP.NET Core\\API\\AssetInfo\\AssetInfo.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -10,6 +10,6 @@ namespace AssetInfo.API.Services
     {
         public IEnumerable<string> GetMachineTypes();
         public IEnumerable<Asset> GetMachineTypesForAsset(string assetName);
-        public IEnumerable<string> GetMachineTypesWhichUseLatestAssetSeriesForAllAssetThatItUses();
+        public IEnumerable<string> GetMachineWhichUseLatestAssets();
     }
 }
