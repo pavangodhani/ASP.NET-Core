@@ -1,4 +1,5 @@
 ﻿using AssetInfo.API.Entities;
+using AssetInfo.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -7,16 +8,19 @@ using System.Threading.Tasks;
 
 namespace AssetInfo.API.Helpers
 {
-    public class AssetComparer : IEqualityComparer<Asset>
+    public class AssetComparer : IEqualityComparer<AssetNameAndSeriesNo>
     {
-        public bool Equals(Asset x, Asset y)
+        public bool Equals(AssetNameAndSeriesNo x, AssetNameAndSeriesNo y)
         {
             return x.AssetName == y.AssetName && x.AssetSeriesNo == y.AssetSeriesNo;
         }
 
-        public int GetHashCode([DisallowNull] Asset obj)
+        public int GetHashCode(AssetNameAndSeriesNo obj)
         {
-            return 0;
+            //string asset = obj.AssetName + " " + obj.AssetSeriesNo;
+
+            int hashCode = obj.AssetName.GetHashCode() + obj.AssetSeriesNo.GetHashCode();
+            return hashCode;
         }
     }
 }

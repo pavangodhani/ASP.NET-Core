@@ -34,37 +34,58 @@ namespace AssetInfo.API.Services
                 ).ToList<Asset>();
         }
 
-
-        public IEnumerable<string> GetMachineWhichUseLatestAssets()
+        public IEnumerable<string> GetMachineTypesWhichUseLatestAssets()
         {
-            var groupByMachineType = 
+            var groupsByMachineTypes =
                 _context.Assets.ToList()
-                .GroupBy(a => a.MachineType)
-                .ToDictionary(a => a.Key, a => a.ToList());
+                .GroupBy(a => a.MachineType);
+                //.ToDictionary(g => g.Key, g => g.ToList());
 
-            var assetWithLatestSeries = GetAssetsWithLatestSeriesNo();
+            var assetsWithLatestSeries = GetAssetsWithLatestSeriesNumber();
 
-            var machineWhichUseLatestAssets = new List<string>();
+            ICollection<string> machineTypesWhichUseLatestAssets = new List<string>();
 
             AssetComparer assetComparer = new AssetComparer();
 
-            foreach (var machineType in groupByMachineType)
+            foreach (var machineType in groupsByMachineTypes)
             {
-                if(machineType.Value.All(a => assetWithLatestSeries.Contains<Asset>(a, assetComparer)))
+                if (machineType.All(
+                    a => assetsWithLatestSeries.Contains<AssetNameAndSeriesNo>(
+                        new AssetNameAndSeriesNo
+                        { 
+                            AssetName = a.AssetName, 
+                            AssetSeriesNo = a.AssetSeriesNo
+                        }, assetComparer)))
                 {
-                    machineWhichUseLatestAssets.Add(machineType.Key);
+                    machineTypesWhichUseLatestAssets.Add(machineType.Key);
                 }
             }
-            return machineWhichUseLatestAssets;
+            return machineTypesWhichUseLatestAssets;
         }
 
-        public IEnumerable<Asset> GetAssetsWithLatestSeriesNo()
+        IEnumerable<AssetNameAndSeriesNo> GetAssetsWithLatestSeriesNumber()
         {
             AssetNameComparer assetNameComparer = new AssetNameComparer();
 
-            return _context.Assets.OrderByDescending(
-                a => a.AssetSeriesNo
-                ).ToHashSet<Asset>(assetNameComparer);
+            //return _context.Assets.OrderByDescending(
+            //    a => a.AssetSeriesNo
+            //    ).ToHashSet<Asset>(assetNameComparer);
+
+            return _context.Assets.GroupBy(a => a.AssetName).Select(
+                g => new AssetNameAndSeriesNo
+                {
+                    AssetName = g.Key,
+                    AssetSeriesNo = g.Max(a => a.AssetSeriesNo)
+                }).ToList();
+        }
+    }
+
+    public class Number
+    {
+        int num;
+        public Number(int n)
+        {
+            num = n;
         }
     }
 }

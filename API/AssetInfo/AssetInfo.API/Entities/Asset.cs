@@ -38,7 +38,10 @@ namespace AssetInfo.API.Entities
 
         public bool Equals(Asset asset)
         {
-            if (asset == null) return false;
+            if (asset == null)
+            {
+                return false;
+            }
 
             return (
                 this.AssetName.Equals(asset.AssetName)

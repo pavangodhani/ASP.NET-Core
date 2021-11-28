@@ -76,7 +76,7 @@ namespace AssetInfo.API.Controllers
         public ActionResult<IEnumerable<string>> GetMachineTypesWhichUseLatestAsse()
         {
             var machineTypesWhichUseLatestAsse = 
-                _machineInfoRepository.GetMachineWhichUseLatestAssets();
+                _machineInfoRepository.GetMachineTypesWhichUseLatestAssets();
 
             if(machineTypesWhichUseLatestAsse.Count() == 0)
             {

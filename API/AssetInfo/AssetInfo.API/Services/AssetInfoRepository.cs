@@ -33,7 +33,7 @@ namespace AssetInfo.API.Services
             return _context.Assets.FirstOrDefault(a => a.Id == id);
         }
 
-        public IEnumerable<Asset> GetAssetsWithLatestSeriesNo()
+        public IEnumerable<Asset> GetAssetsWithLatestSeriesNumber()
         {
             AssetNameComparer assetComparer = new AssetNameComparer();
 

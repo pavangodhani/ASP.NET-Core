@@ -11,9 +11,8 @@ namespace AssetInfo.API.Profiles
         public AssetProfile()
         {
             CreateMap<Entities.Asset, Models.MachineTypesForAssetDto>();
-            CreateMap<Entities.Asset, Models.AssetForMachineTypeDto>();
-
-            CreateMap<Models.AssetForMachineTypeDto, Entities.Asset>();
+            CreateMap<Entities.Asset, Models.AssetNameAndSeriesNo>();
+            CreateMap<Models.AssetNameAndSeriesNo, Entities.Asset>();
             CreateMap<Models.AssetDto, Entities.Asset>();
             CreateMap<Entities.Asset, Models.AssetDto>();
             CreateMap<Models.AssetForCreationDto, Entities.Asset>();

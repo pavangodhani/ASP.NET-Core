@@ -48,6 +48,7 @@ namespace AssetInfo.API
 
             services.AddScoped<IAssetInfoRepository, AssetInfoRepository>();
             services.AddScoped<IMachineInfoRepository, MachineInfoRepository>();
+            services.AddScoped<IDownloadService, DownloadService>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

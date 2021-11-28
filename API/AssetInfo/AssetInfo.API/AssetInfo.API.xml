@@ -18,7 +18,7 @@
             <param name="id">The id of the asset</param>
             <returns>Return the requested asset</returns>
         </member>
-        <member name="M:AssetInfo.API.Controllers.AssetsController.GetAssetsWithLatestSeriesNo">
+        <member name="M:AssetInfo.API.Controllers.AssetsController.GetAssetsWithLatestSeriesNumber">
             <summary>
             Get the all asset with it's latest series no
             </summary>

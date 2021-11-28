@@ -25,7 +25,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.WindowsAzure.Management.Scheduler" Version="6.2.0" />
+    <PackageReference Include="MimeKit" Version="2.13.0" />
+    <PackageReference Include="SharpZipLib.NETStandard" Version="1.0.7" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="System.Security.Cryptography.Cng" Version="5.0.0" />
   </ItemGroup>
 
 

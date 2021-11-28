@@ -61,7 +61,7 @@ namespace AssetInfo.API.Controllers
             }
 
             return Ok(
-                _mapper.Map<IEnumerable<AssetForMachineTypeDto>>(assetsFromRepoForMachineType)
+                _mapper.Map<IEnumerable<AssetNameAndSeriesNo>>(assetsFromRepoForMachineType)
                 );
         }
 
@@ -92,17 +92,18 @@ namespace AssetInfo.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("latest")]
-        public ActionResult<IEnumerable<AssetForMachineTypeDto>> GetAssetsWithLatestSeriesNo()
+        public ActionResult<IEnumerable<AssetNameAndSeriesNo>> GetAssetsWithLatestSeriesNumber()
         {
-            var assetsWithLatestSeriesNo = _assetInfoRepository.GetAssetsWithLatestSeriesNo();
+            var assetsWithLatestSeriesNumber = 
+                _assetInfoRepository.GetAssetsWithLatestSeriesNumber();
 
-            if(assetsWithLatestSeriesNo.Count() == 0)
+            if(assetsWithLatestSeriesNumber.Count() == 0)
             {
                 return NotFound();
             }
 
             return Ok(
-                _mapper.Map<IEnumerable<AssetForMachineTypeDto>>(assetsWithLatestSeriesNo)
+                _mapper.Map<IEnumerable<AssetNameAndSeriesNo>>(assetsWithLatestSeriesNumber)
                 );
         }
 

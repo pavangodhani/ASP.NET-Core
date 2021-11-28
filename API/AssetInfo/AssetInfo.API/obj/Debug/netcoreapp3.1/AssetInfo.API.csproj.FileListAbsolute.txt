@@ -142,7 +142,6 @@ E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1\AssetInfo.API.csprojAssemblyReference.cache
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1\AssetInfo.API.AssemblyInfoInputs.cache
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1\AssetInfo.API.AssemblyInfo.cs
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1\AssetInfo.API.csproj.CoreCompileInputs.cache
@@ -156,3 +155,10 @@ E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1\AssetInfo.API.dll
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1\AssetInfo.API.pdb
 E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1\AssetInfo.API.genruntimeconfig.cache
+E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Cng.dll
+E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\System.Formats.Asn1.dll
+E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
+E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\obj\Debug\netcoreapp3.1\AssetInfo.API.csproj.AssemblyReference.cache
+E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\MimeKit.dll
+E:\KLing\github\ASP.NET Core\API\AssetInfo\AssetInfo.API\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

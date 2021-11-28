@@ -87,9 +87,21 @@
               "target": "Package",
               "version": "[6.2.0, )"
             },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "SharpZipLib.NETStandard": {
+              "target": "Package",
+              "version": "[1.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.1.4, )"
+            },
+            "System.Security.Cryptography.Cng": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -110,7 +122,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
